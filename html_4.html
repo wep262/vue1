@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box>div{
+            width: 125px;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 20px;
+            color: white;
+            font-weight: bold;
+            background-color: rgb(150, 50, 50);
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!-- v-for -->
+        <!-- 遍历数组 -->
+        <div v-for="value,index in arr">
+            {{index}}-{{value}}:
+        </div>
+        <hr>
+        <!-- 遍历对象 -->
+        <div v-for="value,key in object">
+            {{key}}-{{value}}
+        </div>
+        <hr>
+        <!-- 生成范围 -->
+        <div v-for="item in 5">{{item}}</div>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                arr: [1,2,3,4,5],
+                object:{11:1,22:2,33:3}
+            }
+        })
+    </script>
+</body>
+</html>

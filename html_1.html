@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <!-- 插值表达式 -->
+        <!-- 变量 -->
+        <div>{{msg}}</div>
+        <!-- 部分函数方法 -->
+        <div>{{msg.replace(' ','')}}</div>
+        <!-- 运算 -->
+        <div>{{msg + '123'}}</div>
+        <!-- 三元运算 -->
+        <div>{{'string' == typeof(msg)?'真':'假'}}</div>
+        <!-- 数组 -->
+        <div>{{arr}}</div>
+        <div>{{arr[3]}}</div>
+        <!-- 对象 -->
+        <div>{{person.name}}</div>
+        <!-- 方法 -->
+        <div>{{show()}}</div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                msg: 'Hello Word!',
+                arr: [1, 2, 3, 4, 5, 6, 7],
+                person: {
+                    name: '李四',
+                    age: 20
+                }
+            },
+            methods:{
+                show(){
+                    alert(3);
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

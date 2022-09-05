@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 指令 -->
+    <div id="app">
+        <!-- 解析纯文本 -->
+        <div v-text="msg"></div>  
+        <!-- 解析标签 -->
+        <div v-html="center"></div>
+        <!-- 解决加载闪动问题。标签不显示，显示内容 -->
+        <div v-cloak>{{msg}}</div>
+        <div v-cloak>
+            <div>{{msg}}</div>
+            <div>{{msg}}</div>
+        </div>
+        <!-- 原始信息输出，不解析 -->
+        <div v-pre>{{msg000}}</div>  <!--输出：{{msg000}}  -->
+    </div>
+        <!-- 渲染数据失去响应，只渲染一次 -->
+        <div v-once>{{text}}</div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                msg: '我是文字',
+                center: '<h3>我是标签</h3>',
+                text:'渲染一次'
+            }
+        })
+    </script>
+</body>
+</html>
